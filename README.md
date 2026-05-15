@@ -162,10 +162,15 @@ The following tests are based on the user stories above:
     3.  **Confirmation:** The system prompts the user with "Are you sure you want to delete this note?"; the user clicks **"Yes"**.
 * **System Assertion:** The note is removed from the UI list with a toast at the bottom showing a successful updating of the new task.
 
-
 ## Setup Instructions
 1.  **Clone the repository:** `git clone <repository-url>`
 2.  **Install dependencies:** `npm install`
 3.  **Launch development server:** `npm start`
 4.  **Execute test suites:**
     * `npm test`
+
+## Test Results
+### Unit Tests
+* **Unit Tesing for Note Object Validataion**
+
+    ![alt text](image.png)
