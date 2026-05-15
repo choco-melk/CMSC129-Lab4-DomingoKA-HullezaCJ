@@ -1,0 +1,13 @@
+import validateNote from "../../src/functions/validateNote";
+
+describe("Validate Note Test", () => {
+    test("Note title is empty", () => {
+        expect(validateForm({"title" : "", "content": "This is a note with an empty title."})).toBe(false);
+    });
+    test("Note title is a whitespace, tab, or blank-type character", () => {
+        expect(validateForm({"title" : " ", "content": "This is a note with a whitespace as title."})).toBe(false);
+    });
+    test("Content length exceeds 1000 characters", () => {
+        expect(validateForm({"title" : "Title", "content": "I never expected love to arrive quietly, without spectacle or warning, but that’s exactly how it happened with her. It wasn’t in a single moment of realization, nor in some grand confession under perfect circumstances. Instead, it grew in the in-between spaces—shared conversations, comfortable silences, and the small, almost forgettable details that somehow became everything to me. What I love most about her isn’t just the obvious things, though there are many. It’s not only the way she smiles or the sound of her laughter, though those are enough to brighten even the heaviest days. It’s the way she thinks, the way she notices things others overlook, and the quiet strength she carries without ever needing to prove it. There is something deeply grounding about her presence, as if the chaos of the world softens when she’s near. Loving her has changed the way I see time. Moments feel fuller, more meaningful, as if they hold a weight they never did before. Even the simplest things—walking, talking, sitting beside her—feel like something worth remembering. It’s not about constant excitement, but about a steady, unwavering sense of peace. With her, I don’t feel the need to be anything more or anything less than who I am. There’s also a certain vulnerability that comes with loving her. She matters to me in a way that makes everything feel more fragile, more real. But instead of fear, it brings clarity. It reminds me that love is not about control or certainty, but about choosing someone, again and again, despite the unknown. In the end, my love for her isn’t something I can fully explain. It exists in the quiet moments, in the things left unsaid, and in the way she has become a part of how I understand the world. And if love is measured not by how loudly it declares itself but by how deeply it is felt, then I know that what I feel for her is something rare, something lasting, and something I will always carry with me."})).toBe(false);
+    });
+})
