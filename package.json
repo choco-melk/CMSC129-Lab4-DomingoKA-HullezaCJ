@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node src/backend/index.js", 
+    "start": "node src/backend/index.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -19,7 +19,8 @@
     "jest": "^30.4.2",
     "nodemon": "^3.1.14",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-dom": "^19.2.6",
+    "wait-on": "^9.0.10"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
