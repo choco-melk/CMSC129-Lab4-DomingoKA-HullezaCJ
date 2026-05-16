@@ -23,11 +23,13 @@ jobs:
       - name : Install Dependencies
         run  : npm install
 
-      # start server for integration testing
-      - name : Start Server in Background
-        run  : npm start &
-
-      - name : Wait for Server and Run Tests
-        run  : |
-            npx wait-on http://localhost:3000 --timeout 60000
-            npm run test 
+      - name: Start Server and Run Integration Tests
+        run: |
+          # 1. Start the server in the background using IPv4 forcing if needed
+          npm start &
+          
+          # 2. Wait for it using 127.0.0.1 instead of localhost, auto-confirming npx
+          npx --yes wait-on http://127.0.0.1:3000 --timeout 60000
+          
+          # 3. Trigger your Jest tests
+          npm run test
