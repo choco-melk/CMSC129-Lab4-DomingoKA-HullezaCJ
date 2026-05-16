@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "server": "nodemon src/backend/index.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "jest --verbose"
@@ -14,7 +15,9 @@
     "@babel/preset-env": "^7.29.5",
     "@types/jest": "^30.0.0",
     "eslint-plugin-jest": "^29.15.2",
+    "express": "^5.2.1",
     "jest": "^30.4.2",
+    "nodemon": "^3.1.14",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },
