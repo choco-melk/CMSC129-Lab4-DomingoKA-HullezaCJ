@@ -20,7 +20,7 @@ app.post("/notes", (req, res) => {
         res.status(201).json(notes[noteIndex - 1]);
         
     } catch (e) {
-        console.log(e);
+        console.log(e);`    `
         res.status(500).json({ "error": "Failed to create note" });
     }
 })

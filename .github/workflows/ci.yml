@@ -18,9 +18,16 @@ jobs:
         uses : actions/setup-node@v3
         with : 
           node-version: 20
+          cache: 'npm'
 
       - name : Install Dependencies
         run  : npm install
 
-      - name : Run Tests
-        run  : npm test 
+      # start server for integration testing
+      - name : Start Server in Background
+        run  : npm start &
+
+      - name : Wait for Server and Run Tests
+        run  : |
+            npx wait-on http://localhost:3000 --timeout 60000
+            npm run test 
