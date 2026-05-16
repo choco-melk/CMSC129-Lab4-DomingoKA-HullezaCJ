@@ -29,7 +29,7 @@ jobs:
           npm start &
           
           # 2. Wait for it using 127.0.0.1 instead of localhost, auto-confirming npx
-          npx --yes wait-on http://127.0.0.1:3000 --timeout 60000
+          npx --yes wait-on http://localhost:3000 --timeout 60000
           
           # 3. Trigger your Jest tests
           npm run test
